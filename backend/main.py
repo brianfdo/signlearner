@@ -1,3 +1,5 @@
+# Usage: uvicorn main:app --reload
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -35,12 +37,15 @@ class LessonRequest(BaseModel):
 @app.post("/text-to-asl")
 async def text_to_asl(data: TextInput):
     words = data.text.lower().split()
-    video_urls = []
+    video_sequence = []
+
     for word in words:
         video_url = WORD_TO_VIDEO.get(word)
-        if video_url:
-            video_urls.append(video_url)
-    return {"video_sequence": video_urls}
+        video_sequence.append({
+            "word": word,
+            "video_url": video_url
+        })
+    return {"video_sequence": video_sequence}
 
 @app.post("/generate-lesson")
 async def generate_lesson(data: LessonRequest):
@@ -62,7 +67,7 @@ async def generate_lesson(data: LessonRequest):
         else:
             video_urls.append({"word": word, "video_url": None})
 
-    return {"video_sequence": video_urls}
+    return {"lesson_plan": video_urls}
 
 @app.get("/")
 async def root():
