@@ -135,5 +135,15 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+.python-versions
+.python-version
 
+# ChromaDB database directory
 /backend/chroma_db/
+
+__pycache__/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
