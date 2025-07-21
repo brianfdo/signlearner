@@ -25,7 +25,7 @@ export const UI_CONFIG = {
     LESSON_PLAN: 'Your Personalized ASL Lesson'
   },
   HEADER: {
-    TITLE: 'ASL Learning Hub',
+    TITLE: 'SignLearner',
     SUBTITLE: 'Discover American Sign Language through interactive videos'
   }
 };

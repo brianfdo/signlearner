@@ -24,7 +24,7 @@ const ASLTranslator = () => {
     <div style={styles.container}>
       <div style={styles.innerContainer}>
         <Header 
-          title="ASL Learning Hub"
+          title="SignLearner"
           subtitle="Discover American Sign Language through interactive videos"
         />
         
