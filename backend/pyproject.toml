@@ -9,17 +9,21 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.11"
 fastapi = "^0.115.12"
-uvicorn = "^0.34.3"
+uvicorn = {extras = ["standard"], version = "^0.34.3"}
 python-multipart = "^0.0.20"
 pillow = "^11.2.1"
 requests = "^2.32.4"
-numpy = "<2.0"
-onnxruntime = "1.16.3"
-protobuf = ">=3.19.0,<3.21.0"
+numpy = ">=1.21.0,<2.0"
+torch = ">=1.11.0,<2.3"
+onnxruntime = ">=1.14.1,<1.20"
+protobuf = ">=3.19.0,<4.0"
 chromadb = "^1.0.13"
 sentence-transformers = "^2.2.2"
 google-api-python-client = "^2.88.0"
 isodate = "^0.6.1"
+langchain = "^0.3.26"
+langchain-openai = "^0.3.27"
+python-dotenv = "^1.1.1"
 
 
 [build-system]
