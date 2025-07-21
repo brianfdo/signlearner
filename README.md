@@ -14,7 +14,7 @@ A Retrieval-Augmented Generation (RAG) application for American Sign Language le
 - Python 3.8+
 - Node.js 16+
 - Poetry (Python package manager)
-- Llama 2 model (download instructions below)
+- Llama 2 model
 
 ## Setup
 
@@ -30,23 +30,7 @@ cp config_template.py config.py
 
 ### 2. Install Llama 2
 
-Download Llama 2 from Hugging Face and place it in the `backend/model/` directory:
-
-```bash
-# Create model directory
-mkdir -p backend/model
-
-# Download Llama 2 (you'll need to request access from Meta)
-# Place the model files in backend/model/llama-2-7b-chat/
-# The directory structure should be:
-# backend/model/llama-2-7b-chat/
-# ├── config.json
-# ├── pytorch_model.bin
-# ├── tokenizer.json
-# └── tokenizer_config.json
-```
-
-**Note**: You need to request access to Llama 2 from Meta at https://ai.meta.com/llama/
+Download Llama 2 from Hugging Face and place it in the `backend/model/` directory
 
 ### 3. Backend Setup
 
@@ -118,9 +102,3 @@ This is a RAG (Retrieval-Augmented Generation) application that:
 - **Ultra-fast Lesson**: ~1ms lesson generation
 - **Vector Search**: 95% relevance accuracy
 - **Uptime**: 99.9% production reliability
-
-## Troubleshooting
-
-- **Llama 2 not found**: Ensure the model is downloaded and placed in `backend/model/llama-2-7b-chat/`
-- **Database errors**: Run `poetry run python api/ingest.py` to initialize the vector database
-- **Performance issues**: Use ultra-fast mode for instant responses
